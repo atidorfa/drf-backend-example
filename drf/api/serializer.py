@@ -1,10 +1,10 @@
-from rest_framework import serializers
+from rest_framework import serializers # HyperlinkedModelSerializer use this instead
 from .models import OrderDetail, Product, Order
 
-class ProductSerializer(serializers.ModelSerializer):
+class ProductSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Product
-        fields = ['id', 'name', 'price', 'stock']
+        fields = '__all__'
 
 
 class OrderSerializer(serializers.ModelSerializer):

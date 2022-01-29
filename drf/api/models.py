@@ -15,5 +15,5 @@ class Order(models.Model):
 
 class OrderDetail(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
-    quantity = models.IntegerField() # bugfixed
+    quantity = models.IntegerField() # minor bugfixed
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
