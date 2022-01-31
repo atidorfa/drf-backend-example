@@ -8,5 +8,7 @@ router.register('order', OrderViewSet, basename='order')
 router.register('orderdetail', OrderDetailViewSet, basename='orderdetail')
 
 urlpatterns = [
-    path('', include(router.urls))
+    path('', include(router.urls)),
+    path('get_total', OrderViewSet.get_total),
+    path('get_total_usd', OrderViewSet.get_total_usd)
 ]
