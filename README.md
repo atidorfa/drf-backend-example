@@ -1,5 +1,7 @@
 # drf-backend-example
 
+django rest framework backend example
+
 ## To run this project locally, first clone the repository
 
 ```
