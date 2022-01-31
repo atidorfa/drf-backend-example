@@ -1,5 +1,5 @@
 from itertools import product
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from django.db import IntegrityError, transaction
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.response import Response
@@ -13,6 +13,11 @@ class ProductViewSet(ModelViewSet):
     def get_queryset(self):
         queryset = Product.objects.all()
         return queryset
+
+    def delete(self, request, pk):
+        product = get_object_or_404(Product, pk=pk)
+        serializer = ProductSerializer
+        return Response(serializer.data)
 
 
 class OrderViewSet(ModelViewSet):
